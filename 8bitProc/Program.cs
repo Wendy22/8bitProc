@@ -10,6 +10,15 @@ namespace _8bitProc
     {
         static void Main(string[] args)
         {
+            AndGate andgate = new AndGate();
+            andgate.Input2 = true;
+            andgate.Input1 = true;
+            Console.WriteLine(andgate.Output());
+
+            Console.ReadLine();
+            
         }
     }
 }
+
+
