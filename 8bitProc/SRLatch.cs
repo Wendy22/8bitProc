@@ -19,10 +19,14 @@ namespace _8bitProc
 
         public SRLatch()
         {
-            nandGate1.SetInputs(true, false);
-            nandGate2.SetInputs(true, true);
-            this.Q = nandGate1.Output();
-            this.Qbar = nandGate2.Output();
+            //nandGate1.SetInputs(true, false);
+            //nandGate2.SetInputs(true, true);
+            //this.Q = nandGate1.Output();
+            //this.Qbar = nandGate2.Output();
+            
+            
+            
+            
             //nandGate2.SetInputs(true, false);
             //Console.WriteLine("cosntructor State of Nandgate 2 is : " + nandGate2.Input1 + " "+  nandGate2.Input2 +" " + nandGate2.Output);
 
@@ -33,10 +37,30 @@ namespace _8bitProc
 
         public void TruthTable()
         {
-            nandGate2.SetInputs(this.S, nandGate2.Output());
-            //nandGate2.SetInputs(nandGate1.Output, this.R);
-            //this.Q = nandGate1.Output;
-            //this.Qbar = nandGate2.Output;  
+            if (this.S == true && this.R == false)
+            {
+                this.Q = false;
+                this.Qbar = true;
+            }
+            else if(this.S==true && this.R == true)
+            {
+                this.Q = false;
+                this.Qbar = true;
+            }
+            else if (this.S == false && this.R == true)
+            {
+                this.Q = true;
+                this.Qbar = false;
+            }
+            else if(this.S == true && this.R == true)
+            {
+                this.Q = true;
+                this.Qbar = false;
+            }
+            else
+            {
+                Console.WriteLine("SR latch state is in invalid condition");
+            }
         }
 
         public void DisplayState()

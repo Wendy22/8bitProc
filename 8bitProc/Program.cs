@@ -10,13 +10,13 @@ namespace _8bitProc
     {
         static void Main(string[] args)
         {
-            AndGate andgate = new AndGate();
-            andgate.Input2 = true;
-            andgate.Input1 = true;
-            Console.WriteLine(andgate.Output());
-
-            Console.ReadLine();
-            
+            SRLatch srlatch = new SRLatch();
+            srlatch.S = false;
+            srlatch.R = true;
+            srlatch.TruthTable();
+            srlatch.DisplayState();
+            Console.ReadKey();
+                
         }
     }
 }
